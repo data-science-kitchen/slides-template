@@ -1,0 +1,80 @@
+\mode<presentation>
+{
+  \usetheme{default}
+  \usecolortheme{default}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{footline}[frame number]
+  \setbeamercovered{transparent=0}
+}
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm, amssymb, amsfonts, amsmath}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\definecolor{dsk_gray}{RGB}{57,62,70}
+\definecolor{dsk_teal}{RGB}{0,173,181}
+\definecolor{bg_gray}{RGB}{231,231,231}
+\definecolor{fg_gray}{RGB}{33,39,41}
+
+\setbeamercolor{palette primary}{bg=bg_gray,fg=fg_gray}
+\setbeamercolor{palette secondary}{bg=bg_gray,fg=fg_gray}
+\setbeamercolor{palette tertiary}{bg=bg_gray,fg=fg_gray}
+\setbeamercolor{palette quaternary}{bg=bg_gray,fg=fg_gray}
+\setbeamercolor{structure}{fg=dsk_gray} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=dsk_gray} % TOC sections
+
+\setbeamercolor{normal text}{fg=dsk_gray,bg=white}
+\setbeamercolor{alerted text}{fg=dsk_teal}
+\setbeamercolor{example text}{fg=dsk_gray}
+
+\setbeamercolor{subsection in head/foot}{bg=white,fg=white}
+\setbeamercolor{background canvas}{bg=white, fg=white}
+
+\setbeamertemplate{title page}{%
+	\begin{beamercolorbox}[wd=0.8\paperwidth,ht=4cm,dp=1cm]{title}
+		\usebeamerfont{title}\textbf{\inserttitle}\par
+		\ifx\insertsubtitle\@empty%
+		\vspace{0.5cm}
+		\else
+		\vspace{0.3cm}
+		\usebeamerfont{subtitle}\usebeamercolor[dsk_teal]{subtitle}\insertsubtitle\par%
+		\fi     
+	\end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.8\paperwidth,ht=0cm,dp=1cm]{author} %8
+		\usebeamerfont{author}{\insertauthor}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=0.8\paperwidth,ht=0cm,dp=1cm]{date} %8
+		\usebeamerfont{date}{\insertdate}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=0.8\paperwidth,ht=1cm,dp=1cm]{date} %8
+		\includegraphics[width=4cm]{template/dsk-logo.png}\hfill\includegraphics[width=1.5cm]{template/dsk-icon.png}
+	\end{beamercolorbox}%
+}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\newenvironment<>{textblock}[2][]{%
+	\setbeamercolor{block title}{fg=white,bg=dsk_teal}%
+	\setbeamercolor{block body}{fg=dsk_gray,bg=bg_gray}%
+	%\scriptsize%
+	\begin{block}{\scriptsize #2}}{\end{block}}
+
+\linespread{1.15}
+
+\renewcommand\footnoterule{}
+
+\newcommand{\reference}[4]{\footnote[frame]{\tiny #1:\,``#2'',\,\textit{#3}\,(#4)}}
+
+\newcommand{\hl}[1]{\color{dsk_teal}\textbf{#1}\color{dsk_gray}\,}
+
+\usepackage{enumitem}
+\setitemize{itemsep=3em, label=$\blacktriangleright$}
+
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+
+\usepackage{lipsum}
